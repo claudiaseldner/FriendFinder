@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var surveyData = require("../data/friends");
+var surveyArray = require("../data/friends");
 // var waitListData = require("../data/waitinglistData");
 
 
@@ -20,11 +20,11 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/survey", function(req, res) {
-    res.json(tableData);
+    res.json(surveyArray);
   });
 
   app.get("/api/friends", function(req, res) {
-    res.json(friends);
+    res.json(surveyArray);
   });
 
   // API POST Requests
@@ -39,8 +39,8 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
-    if (friends.length < 10) {
-      friends.push(req.body);
+    if (surveyArray.length < 10) {
+      surveyArray.push(req.body);
       res.json(true);
     }
     else {
