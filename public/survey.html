@@ -6,6 +6,7 @@
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -182,7 +183,7 @@
             </div>
             <div class="modal-body">
               <h2 id="match-name"></h2>
-              <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+              <img id="match-img" src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0MTU0MTc3NzkzMTA3MzU1/beyonce-attends-tidal-x-1015-on-october-15-2016-in-new-york-city-photo-by-theo-wargogetty-images-for-tidal-sqaure.jpg" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -193,7 +194,6 @@
       </div>
       <script type="text/javascript">
 
-    // Chosen CSS
     var config = {
       ".chosen-select": {},
       ".chosen-select-deselect": {
@@ -216,7 +216,9 @@
 
     // Capture the form inputs
     $("#submit").on("click", function(event) {
+        alert( "Handler for #submit() called." );
       event.preventDefault();
+
 
       // Form validation
       function validateForm() {
@@ -239,7 +241,7 @@
       // If all required fields are filled
       if (validateForm()) {
         // Create an object for the user"s data
-        var userData = {
+        var surveyArray = {
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
